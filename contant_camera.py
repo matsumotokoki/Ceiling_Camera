@@ -1,9 +1,11 @@
 import cv2
 import time
 import numpy as np
+import datetime
+import os
 
-im_h = 640
-im_w = 480
+im_w = 640
+im_h = 480
 mtx = np.eye(3)   
 dist = np.eye(1,8)
 mtx[0,0] = 0.4686179 * im_w
@@ -20,9 +22,13 @@ dist[0,6] = 503.1987806
 dist[0,7] = 294.3816648
 
 camera = cv2.VideoCapture(0)
-for i in range(10):
+date = datetime.datetime.today().strftime("%Y%M%d%H%M")
+dir_name = "jpg_file"+str(date)
+os.mkdir(dir_name)
+for i in range(700):
+    print(str(i+1) + " times")
     return_value, image = camera.read()
     image = cv2.undistort(image,mtx,dist)
-    cv2.imwrite('opencv'+str(i)+'.png', image)
+    cv2.imwrite('./' + dir_name +'/datas'+str(i)+'.jpg', image)
     time.sleep(1) 
 del(camera)
