@@ -24,7 +24,7 @@ dist[0,7] = 294.3816648
 seconds = 1000
 
 camera = cv2.VideoCapture(0)
-date = datetime.datetime.today().strftime("%Y%M%d%H%M")
+date = datetime.datetime.today().strftime("-%d-%H%M")
 dir_name = "jpg_file"+str(date)
 os.mkdir(dir_name)
 
