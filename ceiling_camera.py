@@ -21,7 +21,7 @@ dist[0,5] = -41.7271568
 dist[0,6] = 503.1987806
 dist[0,7] = 294.3816648
 
-seconds = 1000
+seconds = 700
 
 camera = cv2.VideoCapture(0)
 date = datetime.datetime.today().strftime("-%d-%H%M")
